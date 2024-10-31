@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 15:57:19 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:34:16 by szemmour         ###   ########.fr       */
+/*   Created: 2024/10/28 12:13:51 by szemmour          #+#    #+#             */
+/*   Updated: 2024/10/31 15:35:53 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*tmp;
-	size_t	i;
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	cc;
 
 	i = 0;
-	tmp = (char *)s;
+	str = (unsigned char *)s;
+	cc = (unsigned char)c;
 	while (i < n)
 	{
-		tmp[i] = 0;
+		if (str[i] == cc)
+			return ((void *)&s[i]);
 		i++;
 	}
+	return (NULL);
 }
 
 // int main()
 // {
-//     char str[10] = "Hello";
-//     printf("before: %s\n", str);
-//     ft_bzero(str, 5);
-//     printf("after: %s\n", str);
+//     char str[] = "said";
+//     printf("%s", ft_memchr(str, 'a', 100));
 // }

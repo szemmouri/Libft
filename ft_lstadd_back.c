@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 15:57:19 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:34:16 by szemmour         ###   ########.fr       */
+/*   Created: 2024/10/30 23:18:34 by szemmour          #+#    #+#             */
+/*   Updated: 2024/10/31 15:51:10 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*tmp;
-	size_t	i;
+	t_list	*tmp;
 
-	i = 0;
-	tmp = (char *)s;
-	while (i < n)
+	if (!new)
+		return ;
+	if (!*lst)
 	{
-		tmp[i] = 0;
-		i++;
+		*lst = new;
+		return ;
 	}
+	tmp = lst;
+	while (tmp->next)
+		tmp->next;
+	tmp->next = new;
 }
-
-// int main()
-// {
-//     char str[10] = "Hello";
-//     printf("before: %s\n", str);
-//     ft_bzero(str, 5);
-//     printf("after: %s\n", str);
-// }

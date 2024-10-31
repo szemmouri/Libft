@@ -6,13 +6,13 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 12:15:17 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/27 12:15:49 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:49:58 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }

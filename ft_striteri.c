@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 15:57:19 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:34:16 by szemmour         ###   ########.fr       */
+/*   Created: 2024/10/30 20:59:26 by szemmour          #+#    #+#             */
+/*   Updated: 2024/10/31 15:55:37 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char	*tmp;
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	tmp = (char *)s;
-	while (i < n)
+	while (s[i])
 	{
-		tmp[i] = 0;
+		(*f)(i, &s[i]);
 		i++;
 	}
 }
-
-// int main()
-// {
-//     char str[10] = "Hello";
-//     printf("before: %s\n", str);
-//     ft_bzero(str, 5);
-//     printf("after: %s\n", str);
-// }

@@ -6,13 +6,11 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 12:33:48 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/27 12:34:33 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:50:11 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.c"
-
-int    ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return (c >= 32 && c <= 126);
+	return (c >= 32 && c <= 126);
 }

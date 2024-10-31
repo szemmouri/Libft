@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 15:57:19 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:34:16 by szemmour         ###   ########.fr       */
+/*   Created: 2024/10/30 21:44:07 by szemmour          #+#    #+#             */
+/*   Updated: 2024/10/31 18:45:55 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*tmp;
-	size_t	i;
+	char	d;
 
-	i = 0;
-	tmp = (char *)s;
-	while (i < n)
+	if (n == -2147483648)
 	{
-		tmp[i] = 0;
-		i++;
+		write(fd, "-2147483647", 11);
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+		ft_putnbr_fd(n, fd);
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		d = n + '0';
+		write(fd, &d, 1);
 	}
 }
-
-// int main()
-// {
-//     char str[10] = "Hello";
-//     printf("before: %s\n", str);
-//     ft_bzero(str, 5);
-//     printf("after: %s\n", str);
-// }

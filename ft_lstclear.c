@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 15:57:19 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:34:16 by szemmour         ###   ########.fr       */
+/*   Created: 2024/10/30 23:31:21 by szemmour          #+#    #+#             */
+/*   Updated: 2024/10/31 15:35:35 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char	*tmp;
-	size_t	i;
+	t_list	*tmp;
 
-	i = 0;
-	tmp = (char *)s;
-	while (i < n)
+	while (*lst)
 	{
-		tmp[i] = 0;
-		i++;
+		tmp = (*t_list)->next;
+		del(lst->content);
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
+		free(*lst);
+		*lst = NULL;
 	}
 }
-
-// int main()
-// {
-//     char str[10] = "Hello";
-//     printf("before: %s\n", str);
-//     ft_bzero(str, 5);
-//     printf("after: %s\n", str);
-// }
