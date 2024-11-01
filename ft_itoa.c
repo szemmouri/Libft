@@ -6,29 +6,25 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:00:48 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 18:44:33 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/01 19:05:51 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	numlen(int n)
+static int	ft_numlen(int n)
 {
 	int		len;
 	long	num;
 
 	len = 0;
 	num = n;
-	if (n < 0)
-	{
-		len++;
-		n *= -1;
-	}
-	while (n > 0)
-	{
-		n /= 10;
-		len++;
-	}
+	if (num == 0)
+		return (1);
+	if (num < 0 && ++len)
+		num *= -1;
+	while (num > 0 && ++len)
+		num /= 10;
 	return (len);
 }
 
@@ -38,16 +34,15 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		len;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	num = n;
-	len = numlen(num);
+	len = ft_numlen(n);
 	str = ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	if (num == 0)
-	{
 		str[0] = '0';
-		return (str);
-	}
 	if (num < 0)
 	{
 		str[0] = '-';
@@ -55,8 +50,8 @@ char	*ft_itoa(int n)
 	}
 	while (num > 0)
 	{
-		str[--len] = (num % 10 + '0');
-		num = num / 10;
+		str[--len] = num % 10 + '0';
+		num /= 10;
 	}
 	return (str);
 }
@@ -66,5 +61,6 @@ char	*ft_itoa(int n)
 //     printf("%s\n", ft_itoa(100));
 //     printf("%s\n", ft_itoa(-100));
 //     printf("%s\n", ft_itoa(+100));
-//     printf("%s\n", ft_itoa(2008787878));
+//     printf("%s\n", ft_itoa(-2147483648));
+//     printf("%s\n", ft_itoa(2147483647));
 // }
