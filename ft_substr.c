@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:27:08 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:38:29 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:49:19 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,3 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	}
 	return (str);
 }
-
-// int main()
-// {
-//     printf("%s", ft_substr("Bonjour comment ca va?", 5, 8));
-// }

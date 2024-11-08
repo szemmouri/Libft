@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:42:18 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 18:39:36 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/08 16:22:44 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s || fd < 0)
+		return ;
 	i = 0;
 	while (s[i])
 	{

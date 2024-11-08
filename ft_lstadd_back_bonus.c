@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 16:23:49 by szemmour          #+#    #+#             */
-/*   Updated: 2024/11/01 16:26:45 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/08 12:46:15 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
-	if (!new)
+	if (!new || !lst)
 		return ;
 	if (!*lst)
 	{

@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:13:51 by szemmour          #+#    #+#             */
-/*   Updated: 2024/11/02 17:15:58 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:47:52 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// int main()
-// {
-//     char str[] = "said";
-//     printf("%s", ft_memchr(str, '€', 100));
-// }

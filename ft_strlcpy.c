@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:51:43 by szemmour          #+#    #+#             */
-/*   Updated: 2024/11/01 17:40:12 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:48:53 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (src_len);
 }
-
-// int main()
-// {
-//     char src[] = "said";
-//     char dst[10] = "Hello ";
-
-//     printf("%zu\n", ft_strlcpy(dst, src, 10));
-//     printf("%s\n", dst);
-// }

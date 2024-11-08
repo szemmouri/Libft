@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 16:24:50 by szemmour          #+#    #+#             */
-/*   Updated: 2024/11/01 16:24:51 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:47:25 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*tmp;
-
-	tmp = lst;
-	while (tmp)
+	while (lst)
 	{
-		f(tmp->content);
-		tmp = tmp->next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

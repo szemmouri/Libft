@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:39:37 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:37:22 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/08 16:24:08 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s || fd < 0)
+		return ;
 	i = 0;
 	while (s[i])
 	{

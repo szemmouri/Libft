@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 18:01:17 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:37:52 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:48:46 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	i;
 	size_t	j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = 0;
 	j = 0;
-	str = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
+	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	while (s1[i])
@@ -31,10 +33,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	str[j] = '\0';
 	return (str);
 }
-
-// int main()
-// {
-//     printf("%s\n", ft_strjoin("Hello ", "Said"));
-//     printf("%s\n", ft_strjoin("", ""));
-//     printf("%s\n", ft_strjoin("123 ", "456"));
-// }

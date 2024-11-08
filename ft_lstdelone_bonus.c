@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 16:24:11 by szemmour          #+#    #+#             */
-/*   Updated: 2024/11/01 16:27:08 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:47:20 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
+	if (!lst || !del)
 		return ;
 	del(lst->content);
 	free(lst);

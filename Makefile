@@ -15,22 +15,24 @@ SRCSB = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
     ft_lstmap_bonus.c
 
 OBJS = ${SRCS:.c=.o}
+
 OBJSB = ${SRCSB:.c=.o}
+
 NAME = libft.a
 LIBC = ar rcs
 CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
 
-all: ${NAME}
+%.o: %.c libft.h
+	${CC} ${CFLAGS} -c $< -o $@ 
 
-bonus: ${OBJS} ${OBJSB}
+bonus: ${OBJSB}
 	${LIBC} ${NAME} ${OBJSB}
 
 clean:

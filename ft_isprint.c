@@ -6,9 +6,11 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 12:33:48 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:50:11 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/04 18:44:46 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

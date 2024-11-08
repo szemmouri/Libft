@@ -6,21 +6,16 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 12:14:53 by szemmour          #+#    #+#             */
-/*   Updated: 2024/11/02 13:14:43 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/07 19:14:20 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <fcntl.h> // open
-# include <limits.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
+# include <stdlib.h>   
 # include <unistd.h>
 
-// LIBC functions
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -45,8 +40,6 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 int					ft_atoi(const char *str);
 void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *s1);
-
-// Additional functions
 char				*ft_substr(const char *s, unsigned int start, size_t len);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strtrim(const char *s1, const char *set);
@@ -59,8 +52,6 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-
-// Bounes funcs
 typedef struct s_list
 {
 	void			*content;

@@ -6,7 +6,7 @@
 /*   By: szemmour <szemmour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 19:49:54 by szemmour          #+#    #+#             */
-/*   Updated: 2024/10/31 15:37:40 by szemmour         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:48:39 by szemmour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
-
-// int main()
-// {
-//     char str[] = "abcd";
-//     printf("%s\n", ft_strchr(str, 'c'));
-//     printf("%s\n", ft_strchr(str, 'g'));
-//     printf("%s\n", ft_strchr(str, 0));
-
-//     printf("%s\n", strchr(str, 'c'));
-//     printf("%s\n", strchr(str, 'g'));
-//     printf("%s\n", strchr(str, 0));
-// }
